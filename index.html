@@ -1,0 +1,930 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <title>CYD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: .0; }
+            to { opacity: .1; }
+        }
+    </style>
+</head>
+<body class="bg-sky-100 flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-md mx-auto">
+        <div id="login" class="bg-white p-8 rounded-lg shadow-lg fade-in">
+            <h2 class="text-2xl font-bold text-center text-sky-600 mb-6">Login</h2>
+            <form onsubmit="login(event)">
+                <div class="mb-4">
+                    <label class="block text-gray-700">Email</label>
+                    <input type="email" id="login-email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Password</label>
+                    <input type="password" id="login-password" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Enter your password" required>
+                </div>
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <input type="checkbox" id="remember" class="mr-2">
+                        <label for="remember" class="text-gray-700">Remember me</label>
+                    </div>
+                    <a href="#" class="text-sky-600 hover:underline" onclick="showForgotPassword()">Forgot password?</a>
+                </div>
+                <button type="submit" class="w-full bg-sky-600 text-white py-2 rounded-lg hover:bg-sky-700 transition duration-300">Login</button>
+            </form>
+            <p class="text-center text-gray-700 mt-4">Don't have an account? <a href="#" class="text-sky-600 hover:underline" onclick="showRegister()">Register</a></p>
+        </div>
+
+        <div id="register" class="bg-white p-8 rounded-lg shadow-lg fade-in hidden">
+            <h2 class="text-2xl font-bold text-center text-sky-600 mb-6">Register</h2>
+            <form onsubmit="register(event)">
+                <div class="mb-4">
+                    <label class="block text-gray-700">Name</label>
+                    <input type="text" id="register-name" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Email</label>
+                    <input type="email" id="register-email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Password</label>
+                    <input type="password" id="register-password" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Enter your password" required minlength="8">
+                </div>
+                <button type="submit" class="w-full bg-sky-600 text-white py-2 rounded-lg hover:bg-sky-700 transition duration-300">Register</button>
+            </form>
+            <p class="text-center text-gray-700 mt-4">Already have an account? <a href="#" class="text-sky-600 hover:underline" onclick="showLogin()">Login</a></p>
+        </div>
+
+        <div id="forgot-password" class="bg-white p-8 rounded-lg shadow-lg fade-in hidden">
+            <h2 class="text-2xl font-bold text-center text-sky-600 mb-6">Forgot Password</h2>
+            <form>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Email</label>
+                    <input type="email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-600" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="w-full bg-sky-600 text-white py-2 rounded-lg hover:bg-sky-700 transition duration-300">Reset Password</button>
+            </form>
+            <p class="text-center text-gray-700 mt-4"><a href="#" class="text-sky-600 hover:underline" onclick="showLogin()">Back to Login</a></p>
+        </div>
+
+        <div id="home-page" class="hidden w-full h-screen flex flex-col">
+            <div class="flex-grow p-8">
+               <center><h1 class="text-3xl font-bold text-sky-600 mb-6"><b>Complete Your <br> Dreams </b></h1></center>
+                <video width="640" height="360" autoplay muted loop>
+        <source src="home.mp4" type="video/mp4">
+        <source src="video.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+
+<br>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Icon Grid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-white flex justify-center items-center min-h-screen">
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+        <button class="flex flex-col items-center p-4">
+            <img alt="Wallet icon with a gradient background" class="mx-auto rounded-full" height="80" src="https://storage.googleapis.com/a1aa/image/XV2WsedczPV6TyiXOfM72zlJrrhGfIAeU2zaHAhCpdalmZ1PB.jpg" width="80"/>
+            <p class="mt-2 text-black text-lg">Recharge</p>
+        </button>
+        <button class="flex flex-col items-center p-4">
+            <img alt="Credit card icon with a gradient background" class="mx-auto rounded-full" height="80" src="https://storage.googleapis.com/a1aa/image/GI4tIp9HvNqqCRDf9RbbXWz9dZOYLFl7rZkiZX99ohv1MreTA.jpg" width="80"/>
+            <p class="mt-2 text-black text-lg">Withdraw</p>
+        </button>
+        <button class="flex flex-col items-center p-4">
+            <img alt="WhatsApp icon with a green background" class="mx-auto rounded-full" height="80" src="https://storage.googleapis.com/a1aa/image/lmBrxufrlyX9IyQqm8Nlli590Hx7fJCn49nVO5xli3eLzs6nA.jpg" width="80"/>
+            <p class="mt-2 text-black text-lg">join group</p>
+        </button>
+        <button class="flex flex-col items-center p-4">
+            <img alt="FBR logo" class="mx-auto rounded-full" height="80" src="https://storage.googleapis.com/a1aa/image/MyFBmyGebdy8c6iBi86pQ36xDpfPJzXU4aUznTP2se6Ozs6nA.jpg" width="80"/>
+            <p class="mt-2 text-black text-lg">FBR Certificate</p>
+        </button>
+    </div>
+</body>
+</html>
+
+            </div>
+            <div class="bg-white p-4 shadow-lg flex justify-around" position="fixed" >
+                <button class="text-sky-600" onclick="showHomePageContent()">
+                    <i class="fas fa-home text-2xl"></i>
+                    <p>Home</p>
+                </button>
+                <button class="text-gray-600" onclick="showPackages()">
+                    <i class="fas fa-box text-2xl"></i>
+                    <p>Packages</p>
+                </button>
+                <button class="text-gray-600" onclick="showInvite()">
+                    <i class="fas fa-user-friends text-2xl"></i>
+                    <p>Invite</p>
+                </button>
+                <button class="text-gray-600" onclick="showTasks()">
+                    <i class="fas fa-tasks text-2xl"></i>
+                    <p>Tasks</p>
+                </button>
+                <button class="text-gray-600" onclick="showMe()">
+                    <i class="fas fa-user text-2xl"></i>
+                    <p>Me</p>
+                </button>
+            </div>
+        </div>
+
+        <div id="packages" class="hidden w-full h-screen flex flex-col">
+            <div class="flex-grow p-8">
+            <center>    <h1 class="text-3xl font-bold text-sky-600 mb-6">Packages</h1>
+
+
+                 <style>
+        .swiper-container {
+            width: 100%;
+            height: 400px; /* Set the height of the swiper */
+        }
+        .swiper-slide {
+            display: flex;
+           
+        }
+    </style>
+
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.swiper-container', {
+        direction: 'vertical', // Set the direction to vertical
+        loop: true, // Enable looping
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
+
+
+
+
+                <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="bg-gradient-to-b from-sky-500 to-white p-6 rounded-lg shadow-lg w-80">
+        <h2 class="text-center text-lg font-semibold mb-4">Plan 1</h2>
+        <div class="text-center text-4xl font-bold mb-4">Rs 0.00</div>
+        <ul class="space-y-2 mb-6">
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Daily code: 1</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Referral Earning upto : <span class="font-bold">100</span></span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Total Profit: 120</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Duration: only for 3 days</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Indirect Earning</span>
+            </li>
+
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>only for new user</span>
+            </li>
+        </ul>
+        <button class="w-full bg-sky-500 text-white py-2 rounded-lg">Buy Now</button>
+    </div>
+</body>
+</html>
+
+<br>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="bg-gradient-to-b from-sky-500 to-white p-6 rounded-lg shadow-lg w-80">
+        <h2 class="text-center text-lg font-semibold mb-4">Plan 2</h2>
+        <div class="text-center text-4xl font-bold mb-4">Rs 210.00</div>
+        <ul class="space-y-2 mb-6">
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Daily code: 2</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Referral Earning upto  : <span class="font-bold">200</span></span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Total Profit: 2,400</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Duration: 60</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Indirect Earning</span>
+            </li>
+        </ul>
+        <button class="w-full bg-sky-500 text-white py-2 rounded-lg">Buy Now</button>
+    </div>
+</body>
+</html>
+
+
+<br>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="bg-gradient-to-b from-sky-500 to-white p-6 rounded-lg shadow-lg w-80">
+        <h2 class="text-center text-lg font-semibold mb-4">Plan 3</h2>
+        <div class="text-center text-4xl font-bold mb-4">Rs 420.00</div>
+        <ul class="space-y-2 mb-6">
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Daily code: 5</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Referral Earning upto : <span class="font-bold">400</span></span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Total Profit: 7,500.</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Duration: 75</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Indirect Earning</span>
+            </li>
+        </ul>
+        <button class="w-full bg-sky-500 text-white py-2 rounded-lg">Buy Now</button>
+    </div>
+</body>
+</html>
+
+
+<br>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan 3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="bg-gradient-to-b from-sky-500 to-white p-6 rounded-lg shadow-lg w-80">
+        <h2 class="text-center text-lg font-semibold mb-4">Plan 4</h2>
+        <div class="text-center text-4xl font-bold mb-4">Rs 840.00</div>
+        <ul class="space-y-2 mb-6">
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Daily Ads: 8</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Referral Earning upto Level : <span class="font-bold">800</span></span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Total Profit: 14,400</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Duration: 90</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Indirect Earning</span>
+            </li>
+        </ul>
+        <button class="w-full bg-sky-500 text-white py-2 rounded-lg">Buy Now</button>
+    </div>
+</body>
+</html>
+
+
+
+<br>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan 3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="bg-gradient-to-b from-sky-500 to-white p-6 rounded-lg shadow-lg w-80">
+        <h2 class="text-center text-lg font-semibold mb-4">Plan 5</h2>
+        <div class="text-center text-4xl font-bold mb-4">Rs 1680.00</div>
+        <ul class="space-y-2 mb-6">
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Daily Ads: 10</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Referral Earning upto  : <span class="font-bold">1000</span></span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Total Profit: 14,400</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Duration: 90</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Indirect Earning</span>
+            </li>
+        </ul>
+        <button class="w-full bg-sky-500 text-white py-2 rounded-lg">Buy Now</button>
+    </div>
+</body>
+</html>
+
+
+
+<br>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan 3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="bg-gradient-to-b from-sky-500 to-white p-6 rounded-lg shadow-lg w-80">
+        <h2 class="text-center text-lg font-semibold mb-4">Plan 6</h2>
+        <div class="text-center text-4xl font-bold mb-4">Rs 3360.00</div>
+        <ul class="space-y-2 mb-6">
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Daily Ads: 12</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Referral Earning upto  : <span class="font-bold">2000</span></span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Total Profit: 14,400</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Duration: 90</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Indirect Earning</span>
+            </li>
+        </ul>
+        <button class="w-full bg-sky-500 text-white py-2 rounded-lg">Buy Now</button>
+    </div>
+</body>
+</html>
+
+
+
+<br>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan 3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="bg-gradient-to-b from-sky-500 to-white p-6 rounded-lg shadow-lg w-80">
+        <h2 class="text-center text-lg font-semibold mb-4">Plan 7</h2>
+        <div class="text-center text-4xl font-bold mb-4">Rs 6720.00</div>
+        <ul class="space-y-2 mb-6">
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Daily Ads: 14</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Referral Earning upto  : <span class="font-bold">3000</span></span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Total Profit: 14,400</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Duration: 90</span>
+            </li>
+            <li class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                <span>Indirect Earning</span>
+            </li>
+        </ul>
+        <button class="w-full bg-sky-500 text-white py-2 rounded-lg">Buy Now</button>
+    </div>
+</body>
+</html>
+            </div>
+        
+            <div class="bg-white p-4 shadow-lg flex justify-around">
+                <button class="text-gray-600" onclick="showHomePageContent()">
+                    <i class="fas fa-home text-2xl"></i>
+                    <p>Home</p>
+                </button>
+                <button class="text-sky-600" onclick="showPackages()">
+                    <i class="fas fa-box text-2xl"></i>
+                    <p>Packages</p>
+                </button>
+                <button class="text-gray-600" onclick="showInvite()">
+                    <i class="fas fa-user-friends text-2xl"></i>
+                    <p>Invite</p>
+                </button>
+                <button class="text-gray-600" onclick="showTasks()">
+                    <i class="fas fa-tasks text-2xl"></i>
+                    <p>Tasks</p>
+                </button>
+                <button class="text-gray-600" onclick="showMe()">
+                    <i class="fas fa-user text-2xl"></i>
+                    <p>Me</p>
+                </button>
+            </div>
+        </div>
+
+        <div id="invite" class="hidden w-full h-screen flex flex-col">
+            <div class="flex-grow p-8">
+                <h1 class="text-3xl font-bold text-sky-600 mb-6">Invite</h1>
+                <p class="text-gray-700">This is the invite content.</p>
+            </div>
+            <div class="bg-white p-4 shadow-lg flex justify-around">
+                <button class="text-gray-600" onclick="showHomePageContent()">
+                    <i class="fas fa-home text-2xl"></i>
+                    <p>Home</p>
+                </button>
+                <button class="text-gray-600" onclick="showPackages()">
+                    <i class="fas fa-box text-2xl"></i>
+                    <p>Packages</p>
+                </button>
+                <button class="text-sky-600" onclick="showInvite()">
+                    <i class="fas fa-user-friends text-2xl"></i>
+                    <p>Invite</p>
+                </button>
+                <button class="text-gray-600" onclick="showTasks()">
+                    <i class="fas fa-tasks text-2xl"></i>
+                    <p>Tasks</p>
+                </button>
+                <button class="text-gray-600" onclick="showMe()">
+                    <i class="fas fa-user text-2xl"></i>
+                    <p>Me</p>
+                </button>
+            </div>
+        </div>
+
+        <div id="tasks" class="hidden w-full h-screen flex flex-col">
+            <div class="flex-grow p-8">
+               <center><h1 class="text-3xl font-bold text-sky-600 mb-6">Tasks</h1>
+
+
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="bg-indigo-50 rounded-lg p-6 w-full max-w-sm">
+        <div class="text-orange-500 font-bold mb-4">Ads</div>
+        <div class="flex justify-between text-gray-500 mb-2">
+            <span>Task Price:</span>
+            <span>Rs20.00</span>
+        </div>
+        <div class="flex justify-between text-gray-500 mb-4">
+            <span>Circulation:</span>
+            <span>1s</span>
+        </div>
+        <button class="bg-blue-700 text-white py-2 px-4 rounded-full w-full">Complete task Now</button>
+    </div>
+</body>
+</html>
+
+
+
+
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="bg-indigo-50 rounded-lg p-6 w-full max-w-sm">
+        <div class="text-orange-500 font-bold mb-4">Ads</div>
+        <div class="flex justify-between text-gray-500 mb-2">
+            <span>Task Price:</span>
+            <span>Rs20.00</span>
+        </div>
+        <div class="flex justify-between text-gray-500 mb-4">
+            <span>Circulation:</span>
+            <span>1s</span>
+        </div>
+        <button class="bg-blue-700 text-white py-2 px-4 rounded-full w-full">Complete task Now</button>
+    </div>
+</body>
+</html>
+
+
+
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="bg-indigo-50 rounded-lg p-6 w-full max-w-sm">
+        <div class="text-orange-500 font-bold mb-4">Ads</div>
+        <div class="flex justify-between text-gray-500 mb-2">
+            <span>Task Price:</span>
+            <span>Rs20.00</span>
+        </div>
+        <div class="flex justify-between text-gray-500 mb-4">
+            <span>Circulation:</span>
+            <span>1s</span>
+        </div>
+        <button class="bg-blue-700 text-white py-2 px-4 rounded-full w-full">Complete task Now</button>
+    </div>
+</body>
+</html>
+
+
+
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="bg-indigo-50 rounded-lg p-6 w-full max-w-sm">
+        <div class="text-orange-500 font-bold mb-4">Ads</div>
+        <div class="flex justify-between text-gray-500 mb-2">
+            <span>Task Price:</span>
+            <span>Rs20.00</span>
+        </div>
+        <div class="flex justify-between text-gray-500 mb-4">
+            <span>Circulation:</span>
+            <span>1s</span>
+        </div>
+        <button class="bg-blue-700 text-white py-2 px-4 rounded-full w-full">Complete task Now</button>
+    </div>
+</body>
+</html>
+
+
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="bg-indigo-50 rounded-lg p-6 w-full max-w-sm">
+        <div class="text-orange-500 font-bold mb-4">Ads</div>
+        <div class="flex justify-between text-gray-500 mb-2">
+            <span>Task Price:</span>
+            <span>Rs20.00</span>
+        </div>
+        <div class="flex justify-between text-gray-500 mb-4">
+            <span>Circulation:</span>
+            <span>1s</span>
+        </div>
+        <button class="bg-blue-700 text-white py-2 px-4 rounded-full w-full">Complete task Now</button>
+    </div>
+</body>
+</html>
+
+                
+            </div>
+            <div class="bg-white p-4 shadow-lg flex justify-around">
+                <button class="text-gray-600" onclick="showHomePageContent()">
+                    <i class="fas fa-home text-2xl"></i>
+                    <p>Home</p>
+                </button>
+                <button class="text-gray-600" onclick="showPackages()">
+                    <i class="fas fa-box text-2xl"></i>
+                    <p>Packages</p>
+                </button>
+                <button class="text-gray-600" onclick="showInvite()">
+                    <i class="fas fa-user-friends text-2xl"></i>
+                    <p>Invite</p>
+                </button>
+                <button class="text-sky-600" onclick="showTasks()">
+                    <i class="fas fa-tasks text-2xl"></i>
+                    <p>Tasks</p>
+                </button>
+                <button class="text-gray-600" onclick="showMe()">
+                    <i class="fas fa-user text-2xl"></i>
+                    <p>Me</p>
+                </button>
+            </div>
+        </div>
+
+        <div id="me" class="hidden w-full h-screen flex flex-col">
+            <div class="flex-grow p-8">
+                <h1 class="text-3xl font-bold text-sky-600 mb-6">Me</h1>
+                
+            
+            <html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Asset Details
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-gray-50 flex justify-center items-center min-h-screen">
+  <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+   <div class="flex items-center mb-4">
+    <div class="border-l-4 border-sky-500 pl-2">
+     <h1 class="text-lg font-semibold">
+      Asset Details
+     </h1>
+    </div>
+   </div>
+   <div class="flex justify-between items-center mb-4">
+    <div>
+     <p class="text-2xl font-semibold text-sky-800">
+      15 Rs
+     </p>
+     <p class="text-gray-500">
+      Wallet Balance
+     </p>
+    </div>
+    <img alt="Illustration of a wallet with coins and financial symbols" class="w-16 h-16" height="100" src="https://storage.googleapis.com/a1aa/image/uViMMBv6DxZ6JNQYmYR6fCC1eCvGMMyQTttn9j8XjRjCGU9TA.jpg" width="100"/>
+   </div>
+   <div class="border-t border-gray-200 py-4">
+    <div class="flex justify-between mb-4">
+     <div>
+      <p class="text-xl font-semibold text-sky-800">
+       0 Rs
+      </p>
+      <p class="text-gray-500">
+       Task Earning
+      </p>
+     </div>
+     <div>
+      <p class="text-xl font-semibold text-sky-800">
+       0 Rs
+      </p>
+      <p class="text-gray-500">
+       Approve Withdraw
+      </p>
+     </div>
+    </div>
+    <div class="border-t border-gray-200 my-4"></div>
+    <div class="flex justify-between">
+     <div>
+      <p class="text-xl font-semibold text-sky-800">
+       0 Rs
+      </p>
+      <p class="text-gray-500">
+       Pending Withdraw
+      </p>
+     </div>
+     <div>
+      <p class="text-xl font-semibold text-sky-800">
+       0.00 Rs
+      </p>
+      <p class="text-gray-500">
+       Total Recharge
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="bg-sky-50 p-4 rounded-lg mt-4">
+    <div class="flex justify-between items-center">
+     <p class="text-gray-500">
+      Total Withdrawal
+     </p>
+     <p class="text-xl font-semibold text-sky-800">
+      0.00 Rs
+     </p>
+    </div>
+   </div>
+   <div class="fixed bottom-4 right-4">
+    <button class="bg-sky-500 text-white p-3 rounded-full shadow-lg">
+     <i class="fas fa-headset">
+     </i>
+    </button>
+   </div>
+  </div>
+ </body>
+</html>
+
+
+
+
+                <button class="mt-4 bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition duration-300" onclick="logout()">Logout</button>
+            </div>
+            <div class="bg-white p-4 shadow-lg flex justify-around">
+                <button class="text-gray-600" onclick="showHomePageContent()">
+                    <i class="fas fa-home text-2xl"></i>
+                    <p>Home</p>
+                </button>
+                <button class="text-gray-600" onclick="showPackages()">
+                    <i class="fas fa-box text-2xl"></i>
+                    <p>Packages</p>
+                </button>
+                <button class="text-gray-600" onclick="showInvite()">
+                    <i class="fas fa-user-friends text-2xl"></i>
+                    <p>Invite</p>
+                </button>
+                <button class="text-gray-600" onclick="showTasks()">
+                    <i class="fas fa-tasks text-2xl"></i>
+                    <p>Tasks</p>
+                </button>
+                <button class="text-sky-600" onclick="showMe()">
+                    <i class="fas fa-user text-2xl"></i>
+                    <p>Me</p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            if (localStorage.getItem('isLoggedIn') === 'true') {
+                showHomePageContent();
+            } else {
+                showLogin();
+            }
+        });
+
+        function login(event) {
+            event.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            const user = users.find(user => user.email === email && user.password === password);
+
+            if (user) {
+                localStorage.setItem('isLoggedIn', 'true');
+                showHomePageContent();
+            } else {
+                alert('Invalid email or password');
+            }
+        }
+
+        function register(event) {
+            event.preventDefault();
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long');
+                return;
+            }
+
+            const userExists = users.some(user => user.email === email);
+
+            if (userExists) {
+                alert('An account with this email already exists');
+            } else {
+                users.push({ name, email, password });
+                localStorage.setItem('users', JSON.stringify(users));
+                alert('Registration successful');
+                showLogin();
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            showLogin();
+        }
+
+        function showLogin() {
+            document.getElementById('login').classList.remove('hidden');
+            document.getElementById('register').classList.add('hidden');
+            document.getElementById('forgot-password').classList.add('hidden');
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('packages').classList.add('hidden');
+            document.getElementById('invite').classList.add('hidden');
+            document.getElementById('tasks').classList.add('hidden');
+            document.getElementById('me').classList.add('hidden');
+        }
+
+        function showRegister() {
+            document.getElementById('login').classList.add('hidden');
+            document.getElementById('register').classList.remove('hidden');
+            document.getElementById('forgot-password').classList.add('hidden');
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('packages').classList.add('hidden');
+            document.getElementById('invite').classList.add('hidden');
+            document.getElementById('tasks').classList.add('hidden');
+            document.getElementById('me').classList.add('hidden');
+        }
+
+        function showForgotPassword() {
+            document.getElementById('login').classList.add('hidden');
+            document.getElementById('register').classList.add('hidden');
+            document.getElementById('forgot-password').classList.remove('hidden');
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('packages').classList.add('hidden');
+            document.getElementById('invite').classList.add('hidden');
+            document.getElementById('tasks').classList.add('hidden');
+            document.getElementById('me').classList.add('hidden');
+        }
+
+        function showHomePageContent() {
+            document.getElementById('login').classList.add('hidden');
+            document.getElementById('register').classList.add('hidden');
+            document.getElementById('forgot-password').classList.add('hidden');
+            document.getElementById('home-page').classList.remove('hidden');
+            document.getElementById('packages').classList.add('hidden');
+            document.getElementById('invite').classList.add('hidden');
+            document.getElementById('tasks').classList.add('hidden');
+            document.getElementById('me').classList.add('hidden');
+        }
+
+        function showPackages() {
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('packages').classList.remove('hidden');
+            document.getElementById('invite').classList.add('hidden');
+            document.getElementById('tasks').classList.add('hidden');
+            document.getElementById('me').classList.add('hidden');
+        }
+
+        function showInvite() {
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('packages').classList.add('hidden');
+            document.getElementById('invite').classList.remove('hidden');
+            document.getElementById('tasks').classList.add('hidden');
+            document.getElementById('me').classList.add('hidden');
+        }
+
+        function showTasks() {
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('packages').classList.add('hidden');
+            document.getElementById('invite').classList.add('hidden');
+            document.getElementById('tasks').classList.remove('hidden');
+            document.getElementById('me').classList.add('hidden');
+        }
+
+        function showMe() {
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('packages').classList.add('hidden');
+            document.getElementById('invite').classList.add('hidden');
+            document.getElementById('tasks').classList.add('hidden');
+            document.getElementById('me').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
